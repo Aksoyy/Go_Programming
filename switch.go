@@ -2,48 +2,40 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func main() {
 
-	i := 2
-	fmt.Print("Write ", i, " as ")
-	switch i {
-	case 1:
-		fmt.Println("one")
-	case 2:
-		fmt.Println("two")
-	case 3:
-		fmt.Println("three")
-	}
+	// Here we create an array `a` that will hold exactly
+	// 5 `int`s. The type of elements and length are both
+	// part of the array's type. By default an array is
+	// zero-valued, which for `int`s means `0`s.
+	var a [5]int
+	fmt.Println("emp:", a)
 
-	switch time.Now().Weekday() {
-	case time.Saturday, time.Sunday:
-		fmt.Println("It's the weekend")
-	default:
-		fmt.Println("It's a weekday")
-	}
+	// We can set a value at an index using the
+	// `array[index] = value` syntax, and get a value with
+	// `array[index]`.
+	a[4] = 100
+	fmt.Println("set:", a)
+	fmt.Println("get:", a[4])
 
-	t := time.Now()
-	switch {
-	case t.Hour() < 12:
-		fmt.Println("It's before noon")
-	default:
-		fmt.Println("It's after noon")
-	}
+	// The builtin `len` returns the length of an array.
+	fmt.Println("len:", len(a))
 
-	whatAmI := func(i interface{}) {
-		switch t := i.(type) {
-		case bool:
-			fmt.Println("I'm a bool")
-		case int:
-			fmt.Println("I'm an int")
-		default:
-			fmt.Printf("Don't know type %T\n", t)
+	// Use this syntax to declare and initialize an array
+	// in one line.
+	b := [5]int{1, 2, 3, 4, 5}
+	fmt.Println("dcl:", b)
+
+	// Array types are one-dimensional, but you can
+	// compose types to build multi-dimensional data
+	// structures.
+	var twoD [2][3]int
+	for i := 0; i < 2; i++ {
+		for j := 0; j < 3; j++ {
+			twoD[i][j] = i + j
 		}
 	}
-	whatAmI(true)
-	whatAmI(1)
-	whatAmI("hey")
+	fmt.Println("2d: ", twoD)
 }
