@@ -20,3 +20,5 @@ func main() {
 
 	fmt.Println(x, y, x+y)
 }
+
+// -5 17 12
