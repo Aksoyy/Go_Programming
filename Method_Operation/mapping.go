@@ -20,3 +20,19 @@ func main() {
 // 1979 : Life of Brian
 // 1983 : The Meaning of Life
 // 1971 : Monty Python and the Holy Grail
+
+/*
+	Burada belirtilen map içindeki anahtarın değerine bakarken;
+	monty_python_films_by_year["1983"] --> value + kontrol
+	değeri geriye dönmektedir. Burada belirtilen anahtara
+	karşılık düşen bir değerin olup olmadıgının kontrolu yapılabılır.
+
+	film_name, registered := monty_python_films_by_year["2019"]
+
+	if !registered {
+		fmt.Println("Monty python did not relase a film at 2019")
+	} else {
+		fmt.Println(film_name)
+	}
+
+*/
