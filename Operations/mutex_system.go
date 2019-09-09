@@ -19,22 +19,21 @@ func Work(work_id int, msg string, wg *sync.WaitGroup, mx *sync.Mutex, results m
 
 func main() {
 
-	nWorkers1, nWorkers2 := 5, 4
+	number1, number2 := 5, 4
 	wg := &sync.WaitGroup{}
 	mx := &sync.Mutex{}
-	results := make(map[string]string, nWorkers1+nWorkers2)
+	results := make(map[string]string, number1+number2)
 
-	wg.Add(nWorkers1)
-
-	for i := 0; i < nWorkers1; i++ {
+	wg.Add(number1)
+	for i := 0; i < number1; i++ {
 		go Work(i, "work-1", wg, mx, results)
 	}
-
 	wg.Wait()
-	fmt.Println(results)
-	wg.Add(nWorkers2)
 
-	for i := 0; i < nWorkers2; i++ {
+	fmt.Println(results)
+
+	wg.Add(number2)
+	for i := 0; i < number2; i++ {
 		go Work(i, "work-2", wg, mx, results)
 	}
 	wg.Wait()
