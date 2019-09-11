@@ -18,6 +18,13 @@ func TestCikti(t *testing.T) {
 			},
 			wantVeri: "denemedeneme2",
 		},
+		{
+			name: "Second test",
+			args: args{
+				value: []string{"deneme", "deneme2"},
+			},
+			wantVeri: "denemedeneme2",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
