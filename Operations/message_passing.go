@@ -17,6 +17,7 @@ func Credit(value chan float32) *CreditAccount {
 			CreditAccount.processPayment(amount)
 		}
 	}(ch)
+
 	return CreditAccount
 }
 
