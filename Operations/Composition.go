@@ -19,7 +19,6 @@ type KrediHesap struct {
 }
 
 func main() {
-
 	test := &KrediHesap{}
 	test.HesapBul()    // Test
 	test.HesapOde(400) // Test2
