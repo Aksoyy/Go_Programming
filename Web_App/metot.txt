@@ -18,4 +18,3 @@ type FileSystem interface {
 }
 type Dir string
 func (d Dir) Open(name string) (File, error)
-
