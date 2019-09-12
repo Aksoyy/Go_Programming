@@ -1,0 +1,21 @@
+func Handle( pattern string, handler Handler )
+type Handle interface {
+    ServeHTTP(ResponceWriter, *Request)
+}
+
+func HandleFunc( pattern string, handler HandlerFunc )
+type HandleFunc func(ResponceWriter, *Request)
+func (a HandleFunc) ServeHTTP(ResponceWriter, *Request)
+
+func NotFoundHandler() Handler
+func RedirectHandler(url string, code int) Handler
+func StripPrefix(prefix string, h Handler) Handler
+func TimeoutHandler(h Handler, dt time.Duration, msg string) Handler
+func FileServer(root FileSystem) Handler
+
+type FileSystem interface {
+    Open(name string) (File, error)
+}
+type Dir string
+func (d Dir) Open(name string) (File, error)
+
