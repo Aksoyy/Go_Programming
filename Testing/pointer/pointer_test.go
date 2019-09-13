@@ -6,7 +6,7 @@ import (
 
 func TestWallet(t *testing.T) {
 
-	t.Run("error name: Deposit", func(t *testing.T) {
+	t.Run("test name: Deposit", func(t *testing.T) {
 		wallet := Wallet{}
 		wallet.Deposit(Bitcoin(10))
 
