@@ -11,11 +11,20 @@ func main() {
 	}
 
 	value, control := my_map["deneme"]
-
 	if !control {
 		fmt.Println("not found")
 	} else {
-		fmt.Println(value)
+		fmt.Println(value) // 1
+	}
+
+	value2, control2 := my_map["deneme4"]
+	if !control2 {
+		fmt.Println("not found")
+	} else {
+		fmt.Println(value2)
 	}
 
 }
+
+// 1
+// not found
