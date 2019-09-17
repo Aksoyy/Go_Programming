@@ -5,7 +5,6 @@ package main
 import (
 	"errors"
 	"fmt"
-	"testing"
 )
 
 // Stringify turns the supported value types into a string
@@ -21,17 +20,4 @@ func Stringify(value interface{}) (string, error) {
 	default:
 		return "", errors.New("Invalid type")
 	}
-}
-
-func TestStringify(t *testing.T) {
-	t.Run("message", func(t *testing.T) {
-		
-		got, errorName := Stringify(response map[string]interface{})
-   		wantType, wantError := string, nil 
-
-		if got != wantType {
-			t.Errorf("got %q want %q", got, want)
-		}
-		
-	})
 }
