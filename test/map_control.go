@@ -24,7 +24,13 @@ func main() {
 		fmt.Println(value2)
 	}
 
+	delete(my_map, "deneme2")
+	_, control_delete := my_map["deneme2"]
+	if control_delete == false {
+		fmt.Println("Deger silinmistir.")
+	}
 }
 
 // 1
 // not found
+// Deger silinmistir.
