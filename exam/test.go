@@ -24,23 +24,14 @@ func Stringify(value interface{}) (string, error) {
 }
 
 func TestStringify(t *testing.T) {
+	t.Run("message", func(t *testing.T) {
+		
+		got, errorName := Stringify(response map[string]interface{})
+   		wantType, wantError := string, nil 
 
-	t.Run("string testing", func(t *testing.T) {
-		got, errorName := Stringify("9.0")
-		wantType := ""
 		if got != wantType {
-			t.Errorf("got %q want %q --> %s", got, wantType, errorName)
+			t.Errorf("got %q want %q", got, want)
 		}
+		
 	})
-
-	// t.Run("float testing", func(t *testing.T) {
-	// 	got, errorName := Stringify(9.0)
-	// 	wantType, wantError := 9.0, false
-
-	// 	if got != wantType {
-	// 		t.Errorf("got %q want %q", got, wantType)
-	// 	}
-	// })
 }
-
-// soru5_test.go:32: got "9.0" want "" --> %!s(<nil>)
