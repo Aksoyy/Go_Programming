@@ -4,12 +4,13 @@ import "fmt"
 
 func main() {
 	//	 				 0	  1	   2	3	 4	  5	   6	7
-	edibles := []string{"a", "b", "c", "d", "e", "d", "f", "g"}
-	index_of_cherry := 2
+	my_slice := []string{"a", "b", "c", "d", "e", "f", "g", "h"}
+	delete_index := 2 // delete index
 
-	n_copied := copy(edibles[index_of_cherry:], edibles[index_of_cherry+1:])
-	new_length := index_of_cherry + n_copied
+	copied := copy(my_slice[delete_index:], my_slice[delete_index+1:])
+	fmt.Println(copied, my_slice) // 5 [a b d e f g h h]
+	new_length := delete_index + copied
 
-	edibles = edibles[:new_length]
-	fmt.Println(edibles) // [a b d e d f g]
+	my_slice = my_slice[:new_length]
+	fmt.Println(my_slice) // [a b d e f g h]
 }
