@@ -15,6 +15,7 @@ type ErrorFileClosed struct{}
 func (e ErrorFileClosed) Error() string {
 	return "file: file is closed"
 }
+
 func Read(file File) error {
 	if file.closed {
 		return ErrorFileClosed{}
@@ -25,5 +26,5 @@ func Read(file File) error {
 func main() {
 	f := File{closed: true}
 	err := Read(f)
-	fmt.Println(err)
+	fmt.Println(err) // file: file is closed
 }
